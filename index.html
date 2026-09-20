@@ -4,100 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TeraB | 서비스 소개</title>
-  <style>
-    @font-face {
-      font-family: "Pretendard";
-      src: url("./assets/fonts/PretendardVariable.woff2") format("woff2-variations");
-      font-weight: 45 920;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    body {
-      font-family: "Pretendard", sans-serif;
-    }
-  </style>
+  <title>UI/UX 프로그래밍 | 과제 목록</title>
 </head>
 
 <body>
-  <!--
-  사용자: 개인 NAS를 사용하는 사람
-  목적: 파일/스토리지/파티션을 쉽게 구축 및 설정할 수 있다.
-  핵심 행동: 필요한 영역으로 이동하고 이메일로 도입 신청을 한다.
-  정보 순서: 서비스 소개 → 주요 기능 → 이용 방법 → 도입 문의
-  -->
-
-  <header id="top">
-    <h1>TeraB</h1>
-    <p>내 NAS에서 바로 쓰는 파일 관리 서비스입니다.</p>
-
-    <nav aria-label="주요 메뉴">
-      <a href="#about">서비스 소개</a>
-      <a href="#features">주요 기능</a>
-      <a href="#steps">이용 방법</a>
-      <a href="#subscribe">도입 문의</a>
-    </nav>
+  <header>
+    <h1>UI/UX 프로그래밍</h1>
+    <p>단계별 실습 결과물을 모아둔 페이지입니다.</p>
   </header>
 
   <main>
-    <section id="about">
-      <h2>서비스 소개</h2>
-      <h3>내 NAS가 곧 내 클라우드</h3>
-      <p>
-        TeraB는 집에 있는 NAS에 직접 설치해서 쓰는 파일 관리 서비스입니다.
-        파일과 폴더를 정리하고, 저장 공간을 나눠 쓰고, 가족이나 친구와 링크로 공유할 수 있습니다.
-        모든 데이터는 외부 클라우드가 아니라 내 NAS에 그대로 남습니다.
-      </p>
-
-      <img src="./assets/images/service-login.png" alt="TeraB 웹 화면에서 로그인하는 모습">
-    </section>
-
-    <section id="features">
-      <h2>주요 기능</h2>
-
+    <nav aria-label="과제 목록">
       <ul>
         <li>
-          <h3>파일 보관</h3>
-          <p>끌어다 놓기만 하면 업로드됩니다. 폴더로 정리하고 이름으로 찾습니다.</p>
+          <h2><a href="./step1/">1주차 과제 - GitHub 저장소 및 퍼블리시 주소 제출</a></h2>
         </li>
         <li>
-          <h3>링크 공유</h3>
-          <p>로그인 없이 열리는 공유 링크를 만듭니다. 만료일과 비밀번호를 걸 수 있습니다.</p>
-        </li>
-        <li>
-          <h3>저장 공간 관리</h3>
-          <p>사용자별 저장 공간을 나누고 사용량을 확인합니다. 지운 파일은 휴지통에서 되살립니다.</p>
+          <h2><a href="./step2/">2주차 과제 - 서비스 소개 페이지 HTML 구조 확장</a></h2>
         </li>
       </ul>
-    </section>
-
-    <section id="steps">
-      <h2>이용 방법</h2>
-
-      <ol>
-        <li>NAS에 TeraB를 설치합니다.</li>
-        <li>계정을 만들고 함께 쓸 사람을 초대합니다.</li>
-        <li>파일을 올리고 필요한 사람에게 링크를 보냅니다.</li>
-      </ol>
-    </section>
-
-    <section id="subscribe">
-      <h2>도입 문의</h2>
-      <p>서비스를 이용하고 싶으면 문의하세요</p>
-
-      <form>
-        <label for="email">이메일</label>
-        <input type="email" id="email" name="email" placeholder="name@example.com" required>
-        <button type="submit">문의하기</button>
-      </form>
-    </section>
+    </nav>
   </main>
-
-  <footer>
-    <p>© 2026 TeraB</p>
-    <a href="#top">맨 위로</a>
-  </footer>
 </body>
 
 </html>
