@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css" />
+  <title>TeraB | 서비스 소개</title>
+</head>
+
+<body>
+  <header id="top">
+    <h1>TeraB</h1>
+    <p>내 NAS에서 바로 쓰는 파일 관리 서비스입니다.</p>
+
+    <nav aria-label="주요 메뉴">
+      <a href="#about">서비스 소개</a>
+      <a href="#features">주요 기능</a>
+      <a href="#steps">이용 방법</a>
+      <a href="#subscribe">도입 문의</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>서비스 소개</h2>
+      <h3>내 NAS가 곧 내 클라우드</h3>
+      <p>
+        TeraB는 집에 있는 NAS에 직접 설치해서 쓰는 파일 관리 서비스입니다.
+        파일과 폴더를 정리하고, 저장 공간을 나눠 쓰고, 가족이나 친구와 링크로 공유할 수 있습니다.
+        모든 데이터는 외부 클라우드가 아니라 내 NAS에 그대로 남습니다.
+      </p>
+
+      <img src="./assets/images/service-login.png" alt="TeraB 웹 화면에서 로그인하는 모습">
+    </section>
+
+    <section id="features">
+      <h2>주요 기능</h2>
+
+      <div class="tabs" role="tablist" aria-label="기능 선택">
+        <button id="tab-file-storage" class="tab is-active" type="button" role="tab" aria-selected="true"
+          aria-controls="feature-file-storage" data-target="#feature-file-storage">
+          파일 보관
+        </button>
+        <button id="tab-share-link" class="tab" type="button" role="tab" aria-selected="false"
+          aria-controls="feature-share-link" data-target="#feature-share-link">
+          링크 공유
+        </button>
+        <button id="tab-manage-storage" class="tab" type="button" role="tab" aria-selected="false"
+          aria-controls="feature-manage-storage" data-target="#feature-manage-storage">
+          저장 공간 관리
+        </button>
+      </div>
+
+      <div id="feature-file-storage" class="panel is-active" role="tabpanel" aria-labelledby="tab-file-storage">
+        <h3>파일 보관</h3>
+        <p>끌어다 놓기만 하면 업로드됩니다. 폴더로 정리하고 이름으로 찾습니다.</p>
+      </div>
+
+      <div id="feature-share-link" class="panel" role="tabpanel" aria-labelledby="tab-share-link" hidden>
+        <h3>링크 공유</h3>
+        <p>로그인 없이 열리는 공유 링크를 만듭니다. 만료일과 비밀번호를 걸 수 있습니다.</p>
+      </div>
+
+      <div id="feature-manage-storage" class="panel" role="tabpanel" aria-labelledby="tab-manage-storage" hidden>
+        <h3>저장 공간 관리</h3>
+        <p>사용자별 저장 공간을 나누고 사용량을 확인합니다. 지운 파일은 휴지통에서 되살립니다.</p>
+      </div>
+
+    </section>
+
+    <section id="steps">
+      <h2>이용 방법</h2>
+
+      <ol>
+        <li>NAS에 TeraB를 설치합니다.</li>
+        <li>계정을 만들고 함께 쓸 사람을 초대합니다.</li>
+        <li>파일을 올리고 필요한 사람에게 링크를 보냅니다.</li>
+      </ol>
+    </section>
+
+    <section id="event-practice">
+      <h2>기능 설정</h2>
+
+      <div class="event-grid">
+        <article class="event-card">
+          <h3>테마 변경</h3>
+          <button id="themeButton" type="button">다크 테마로 바꾸기</button>
+        </article>
+
+        <article class="event-card">
+          <h3>사용자 정보</h3>
+          <label for="nickname">사용자 이름</label>
+          <input type="text" id="nickname" maxlength="10" />
+          <p id="nicknameCount" aria-live="polite">0 / 10</p>
+        </article>
+
+        <article class="event-card">
+          <h3>개인 정보 수집 동의</h3>
+          <label class="agree-row">
+            <input type="checkbox" id="agreeCheck" />
+            TeraB 서비스 이용을 위한 개인정보 수집에 동의합니다.
+          </label>
+          <p id="agreeMessage" aria-live="polite">
+            동의 후 신청을 시작할 수 있습니다.
+          </p>
+          <button id="startButton" type="button" disabled>
+            TeraB 신청 시작하기
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <dialog id="recording-dialog" aria-labelledby="recording-title" aria-describedby="recording-description">
+      <h2 id="recording-title">개인정보 수집 안내</h2>
+      <p id="recording-description">입력한 정보는 TeraB 신청 안내에만 사용됩니다. 지금은 이용 옵션만 선택하며 설치는 시작되지 않습니다.</p>
+      <div class="dialog-actions">
+        <button id="recording-cancel" type="button">돌아가기</button>
+        <button id="recording-confirm" type="button">동의하고 신청 시작하기</button>
+      </div>
+    </dialog>
+
+    <section id="training-flow" class="training-flow" hidden>
+      <h2>TeraB 신청 설정</h2>
+      <p class="progress" aria-label="설정 진행 단계">
+        <span class="progress__item">1 - 정보</span>
+        <span class="progress__item">2 - 옵션</span>
+        <span class="progress__item">3 - 확인</span>
+      </p>
+
+      <section class="step" data-step="1" hidden>
+        <h3>신청 정보를 입력해 주세요.</h3>
+        <label for="presentation-title">저장 공간 이름</label>
+        <input id="presentation-title" type="text" placeholder="예: 우리집 NAS 보관함" aria-describedby="title-error" />
+        <p id="title-error" class="error-message" aria-live="polite"></p>
+        <button id="title-next" type="button">이용 옵션 선택하기</button>
+      </section>
+
+      <section class="step" data-step="2" hidden>
+        <h3>이용 옵션을 선택해 주세요.</h3>
+        <label for="duration-range">저장 용량</label>
+        <input id="duration-range" type="range" min="0" max="2" step="1" value="1" />
+        <output id="duration-value" for="duration-range">5TB</output>
+        <label><input type="checkbox" id="qna-option" />링크 공유 포함</label>
+        <fieldset id="qna-options" hidden>
+          <legend>동시 공유 링크 수</legend>
+          <label><input type="radio" name="qna-count" value="1" />1개</label>
+          <label><input type="radio" name="qna-count" value="2" checked />2개</label>
+          <label><input type="radio" name="qna-count" value="3" />3개</label>
+        </fieldset>
+        <div class="step-actions">
+          <button id="option-prev" type="button">이전</button>
+          <button id="option-next" type="button">내용 확인하기</button>
+        </div>
+      </section>
+
+      <section class="step" data-step="3" hidden>
+        <h3>입력한 내용을 확인해 주세요.</h3>
+        <div class="summary-list">
+          <div><span>저장 공간 이름</span><strong id="summary-title"></strong></div>
+          <div><span>저장 용량</span><strong id="summary-duration"></strong></div>
+          <div><span>링크 공유</span><strong id="summary-qna"></strong></div>
+        </div>
+        <div class="step-actions">
+          <button id="summary-prev" type="button">수정하기</button>
+          <button id="finish-button" type="button">설정 완료하기</button>
+        </div>
+      </section>
+
+      <section class="step complete-step" data-step="4" hidden>
+        <h3>TeraB 신청 설정이 완료되었습니다.</h3>
+        <p>선택한 옵션을 확인했습니다. 필요하면 다시 설정할 수 있습니다.</p>
+        <button id="restart-button" type="button">다시 설정하기</button>
+      </section>
+    </section>
+
+    <section id="subscribe" class="subscribe-card">
+      <h2>도입 문의</h2>
+
+      <form id="subscribe-form">
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        <button id="subscribeButton" type="submit">문의하기</button>
+      </form>
+      <p id="subscribeMessage" aria-live="polite">
+        이메일을 입력한 뒤 신청해주세요.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 TeraB</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
